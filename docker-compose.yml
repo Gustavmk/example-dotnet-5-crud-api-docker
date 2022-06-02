@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: ./dockerfile
     environment:
-      - ConnectionStrings__WebApiDatabase=$CONNECTION_STRING
+      - ConnectionStrings__WebApiDatabase=Data Source=mssql; Initial Catalog=dotnet-5-crud-api; User Id=sa; Password=@Passw0rd
     ports:
       - 5001:80
     depends_on:
@@ -28,12 +28,27 @@ services:
     networks:
       - app
 
- # busybox:
- #   image: ubuntu
- #   stdin_open: true      # docker run -i
- #   tty: true             # docker run -t
- #   networks:
- #     - app
+ #webapi2:
+ #  build:
+ #    context: .
+ #    dockerfile: ./dockerfile
+ #  environment:
+ #    - ConnectionStrings__WebApiDatabase=$CONNECTION_STRING
+ #  ports:
+ #    - 5001:80
+ #  depends_on:
+ #    - mssql
+ #  networks:
+ #    - app
+
+  #efmigration:
+  #  image: mcr.microsoft.com/dotnet/sdk:5.0-focal
+  #  stdin_open: true      # docker exec -it 
+  #  tty: true            
+  #  networks:
+  #    - app
+  #  volumes:
+  #    - .:/mnt/work
 
 networks:
   app:
