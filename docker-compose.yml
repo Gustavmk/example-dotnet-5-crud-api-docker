@@ -41,14 +41,14 @@ services:
  #  networks:
  #    - app
 
-  #efmigration:
-  #  image: mcr.microsoft.com/dotnet/sdk:5.0-focal
-  #  stdin_open: true      # docker exec -it 
-  #  tty: true            
-  #  networks:
-  #    - app
-  #  volumes:
-  #    - .:/mnt/work
+ #efmigration:
+ #  image: mcr.microsoft.com/dotnet/sdk:5.0-focal
+ #  stdin_open: true      # docker exec -it 
+ #  tty: true            
+ #  networks:
+ #    - app
+ #  volumes:
+ #    - .:/mnt/work
 
 networks:
   app:
